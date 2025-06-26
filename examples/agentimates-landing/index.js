@@ -113,11 +113,158 @@ function createPreviewAnimation() {
 
 // Initialize animations when the document is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize all Lottie animations
-    initializeLottieAnimations();
-    
-    // Start the typing animation
-    startTypingAnimation();
+    // Initialize background animation
+    const bgAnimation = anime({
+        targets: '.background-animation',
+        opacity: [0, 0.1],
+        duration: 1000,
+        easing: 'easeInOutQuad'
+    });
+
+    // Initialize floating elements
+    anime({
+        targets: '.design-element',
+        translateX: function() { return anime.random(-50, 50); },
+        translateY: function() { return anime.random(-50, 50); },
+        scale: [0.8, 1.2],
+        rotate: function() { return anime.random(-15, 15); },
+        duration: function() { return anime.random(3000, 5000); },
+        delay: function() { return anime.random(0, 1000); },
+        direction: 'alternate',
+        loop: true,
+        easing: 'easeInOutQuad'
+    });
+
+    // Initialize cursor follower
+    const cursor = document.querySelector('.cursor-follower');
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    // Initialize typing animation
+    const phrases = [
+        'Create a modern landing page',
+        'Design an interactive dashboard',
+        'Build a mobile app interface',
+        'Generate a logo animation'
+    ];
+    let currentPhraseIndex = 0;
+    let currentCharIndex = 0;
+    const typingText = document.querySelector('.typing-text');
+    const typingCursor = document.querySelector('.typing-cursor');
+
+    function typePhrase() {
+        if (currentCharIndex < phrases[currentPhraseIndex].length) {
+            typingText.textContent += phrases[currentPhraseIndex][currentCharIndex];
+            currentCharIndex++;
+            setTimeout(typePhrase, 100);
+        } else {
+            setTimeout(erasePhrase, 2000);
+        }
+    }
+
+    function erasePhrase() {
+        if (currentCharIndex > 0) {
+            typingText.textContent = phrases[currentPhraseIndex].substring(0, currentCharIndex - 1);
+            currentCharIndex--;
+            setTimeout(erasePhrase, 50);
+        } else {
+            currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+            setTimeout(typePhrase, 500);
+        }
+    }
+
+    // Start typing animation
+    typePhrase();
+
+    // Animate cursor blink
+    anime({
+        targets: '.typing-cursor',
+        opacity: [1, 0],
+        duration: 800,
+        easing: 'easeInOutQuad',
+        loop: true
+    });
+
+    // Initialize feature cards animation
+    anime({
+        targets: '.feature-card',
+        translateY: [50, 0],
+        opacity: [0, 1],
+        duration: 1000,
+        delay: anime.stagger(200),
+        easing: 'easeOutQuad'
+    });
+
+    // Initialize showcase items animation
+    anime({
+        targets: '.showcase-item',
+        scale: [0.9, 1],
+        opacity: [0, 1],
+        duration: 800,
+        delay: anime.stagger(150),
+        easing: 'easeOutQuad'
+    });
+
+    // Initialize grid lines animation
+    anime({
+        targets: '.grid-line',
+        scaleX: [0, 1],
+        duration: 1500,
+        delay: anime.stagger(300),
+        easing: 'easeInOutQuart'
+    });
+
+    // Create interactive hover effect for feature cards
+    document.querySelectorAll('.feature-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            anime({
+                targets: card,
+                scale: 1.05,
+                duration: 300,
+                easing: 'easeOutQuad'
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            anime({
+                targets: card,
+                scale: 1,
+                duration: 300,
+                easing: 'easeOutQuad'
+            });
+        });
+    });
+
+    // Initialize submit button animation
+    const submitBtn = document.querySelector('.submit-btn');
+    submitBtn.addEventListener('mouseenter', () => {
+        anime({
+            targets: submitBtn,
+            scale: 1.05,
+            duration: 300,
+            easing: 'easeOutQuad'
+        });
+    });
+
+    submitBtn.addEventListener('mouseleave', () => {
+        anime({
+            targets: submitBtn,
+            scale: 1,
+            duration: 300,
+            easing: 'easeOutQuad'
+        });
+    });
+
+    submitBtn.addEventListener('click', () => {
+        anime({
+            targets: submitBtn,
+            scale: [1, 0.95, 1],
+            duration: 300,
+            easing: 'easeInOutQuad'
+        });
+    });
 
     // Create morphing shapes
     const morphingShapes = document.querySelector('.morphing-shapes');
@@ -264,7 +411,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Input field animations
     const input = document.getElementById('design-input');
-    const submitBtn = document.querySelector('.submit-btn');
     
     input.addEventListener('focus', () => {
         anime({
