@@ -1,10 +1,10 @@
 {
-  "name": "animejs",
+  "name": "agentimate-public-page",
   "version": "4.0.2",
   "homepage": "https://animejs.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juliangarnier/anime.git"
+    "url": "git+https://github.com/hamdaelmc/Agentimate-Public-page.git"
   },
   "description": "JavaScript animation engine",
   "main": "lib/anime.umd.js",
@@ -23,7 +23,7 @@
   "author": "Julian Garnier <hello@julian.gr>",
   "sideEffects": false,
   "bugs": {
-    "url": "https://github.com/juliangarnier/anime/issues"
+    "url": "https://github.com/hamdaelmc/Agentimate-Public-page/issues"
   },
   "files": [
     "lib",
@@ -53,10 +53,13 @@
   "scripts": {
     "dev": "rollup -c -w",
     "dev-types": "types=true rollup -c -w",
-    "build": "build=true types=true rollup -c",
+    "build": "cp -r examples/agentimates-landing/* public/",
     "release": "build=true release=true types=true rollup -c",
     "open-examples": "browser-sync start --startPath examples --server --no-notify --directory --files '**/*.js'",
     "test-browser": "browser-sync start --startPath tests/index.html --server --files '**/*.js' --no-notify --directory",
     "test-node": "node --allow-natives-syntax \"node_modules/.bin/mocha\" -u tdd --timeout 20000 \"./tests/suites/node.test.js\""
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
