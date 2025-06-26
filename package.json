@@ -1,63 +1,18 @@
 {
   "name": "agentimate-public-page",
   "version": "4.0.2",
-  "homepage": "https://animejs.com",
+  "homepage": "https://agentimate-public-page.vercel.app",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hamdaelmc/Agentimate-Public-page.git"
   },
-  "description": "JavaScript animation engine",
-  "main": "lib/anime.umd.js",
-  "module": "lib/anime.esm.js",
-  "types": "types/index.d.ts",
+  "description": "Agentimates Public Website",
+  "main": "public/index.html",
   "type": "module",
-  "exports": {
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./lib/anime.esm.js",
-      "require": "./lib/anime.cjs"
-    },
-    "./package.json": "./package.json"
-  },
   "license": "MIT",
-  "author": "Julian Garnier <hello@julian.gr>",
-  "sideEffects": false,
+  "author": "Hamdael Eslaquit",
   "bugs": {
     "url": "https://github.com/hamdaelmc/Agentimate-Public-page/issues"
-  },
-  "files": [
-    "lib",
-    "types"
-  ],
-  "keywords": [
-    "anime",
-    "anime.js",
-    "animation",
-    "JavaScript",
-    "CSS",
-    "transforms",
-    "SVG",
-    "canvas"
-  ],
-  "devDependencies": {
-    "@rollup/plugin-terser": "^0.4.4",
-    "browser-sync": "^2.29.3",
-    "chai": "^4.3.10",
-    "mocha": "^10.2.0",
-    "rollup": "^4.9.1",
-    "rollup-plugin-filesize": "^10.0.0",
-    "rollup-plugin-ts": "^3.4.5",
-    "three": "^0.160.0",
-    "typescript": "5.1.6"
-  },
-  "scripts": {
-    "dev": "rollup -c -w",
-    "dev-types": "types=true rollup -c -w",
-    "build": "cp -r examples/agentimates-landing/* public/",
-    "release": "build=true release=true types=true rollup -c",
-    "open-examples": "browser-sync start --startPath examples --server --no-notify --directory --files '**/*.js'",
-    "test-browser": "browser-sync start --startPath tests/index.html --server --files '**/*.js' --no-notify --directory",
-    "test-node": "node --allow-natives-syntax \"node_modules/.bin/mocha\" -u tdd --timeout 20000 \"./tests/suites/node.test.js\""
   },
   "engines": {
     "node": ">=18.0.0"

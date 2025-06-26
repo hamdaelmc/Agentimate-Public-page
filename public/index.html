@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentimates - AI-Powered Design Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+</head>
+<body>
+    <div class="background-animation">
+        <div id="bg-lottie"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <div id="logo-lottie"></div>
+            Agentimates
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-item">Community</a>
+            <a href="#" class="nav-item">Enterprise</a>
+            <a href="#" class="nav-item">Learn</a>
+            <a href="#" class="nav-item">Shipped</a>
+        </div>
+        <div class="nav-auth">
+            <a href="#" class="login">Log in</a>
+            <a href="#" class="get-started">Get started</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="main-title">Transform Your Ideas</span>
+                    <span class="sub-title">Into Living Designs</span>
+                </h1>
+                
+                <p class="hero-subtitle">Let AI bring your creative visions to life with stunning animations and designs.</p>
+
+                <div class="design-input-container">
+                    <div class="input-wrapper">
+                        <div class="typing-container">
+                            <span class="typing-text"></span>
+                            <span class="typing-cursor">|</span>
+                        </div>
+                        <button class="submit-btn">
+                            <span>Create</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="animation-preview">
+                    <div class="interactive-canvas">
+                        <div id="preview-lottie"></div>
+                        <div class="floating-elements">
+                            <div class="design-element" id="element1"></div>
+                            <div class="design-element" id="element2"></div>
+                            <div class="design-element" id="element3"></div>
+                        </div>
+                        <div class="cursor-follower"></div>
+                        <div class="design-grid">
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                        </div>
+                    </div>
+                    <div class="interaction-hint">
+                        Move your cursor to interact with the design elements
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <div id="feature1-lottie"></div>
+                    </div>
+                    <h3>AI-Powered Design</h3>
+                    <p>Watch as our intelligent agents transform your concepts into stunning visual experiences.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <div id="feature2-lottie"></div>
+                    </div>
+                    <h3>Smart Animations</h3>
+                    <p>Create engaging animations with our AI that understands motion and timing perfectly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <div id="feature3-lottie"></div>
+                    </div>
+                    <h3>Real-time Magic</h3>
+                    <p>See your ideas come to life instantly with our real-time preview and collaboration tools.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="showcase">
+            <h2 class="showcase-title">Stunning Examples</h2>
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80" alt="Digital Agency Landing" class="showcase-image">
+                    <div class="showcase-content">
+                        <h3>Digital Agency Landing</h3>
+                        <p>A modern, animated landing page for a digital creative agency with smooth scroll animations and interactive elements.</p>
+                        <span class="showcase-tag">Agency</span>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="SaaS Dashboard" class="showcase-image">
+                    <div class="showcase-content">
+                        <h3>SaaS Dashboard</h3>
+                        <p>An elegant SaaS product landing page featuring data visualizations and micro-interactions.</p>
+                        <span class="showcase-tag">SaaS</span>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80" alt="Mobile App Landing" class="showcase-image">
+                    <div class="showcase-content">
+                        <h3>Mobile App Landing</h3>
+                        <p>A vibrant landing page for a mobile app with device mockups and feature highlights.</p>
+                        <span class="showcase-tag">Mobile</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html> 
